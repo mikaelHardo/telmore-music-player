@@ -1,0 +1,49 @@
+﻿<Window x:Class="MusicPlayerNew.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicPlayerNew"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition  Height="5"></RowDefinition>
+            <RowDefinition  Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Image Name="Cover" Grid.ColumnSpan="4" Grid.RowSpan="3" Margin="0,0,0.2,-0.2" Stretch="UniformToFill"/>
+        <Button Name="CloseButton" Width="20" Height="20" Grid.Column="2" Click="CloseClicked" VerticalAlignment="Top" Background="Transparent" Foreground="Red" BorderBrush="Transparent" HorizontalAlignment="Right" Padding="0" FontSize="15" >x</Button>
+        <Button Name="PrevButton" Height="30" Width="30" BorderBrush="Transparent" Background="White" Opacity="0.9" Grid.Column="0" Click="PreviousClicked">
+            <Image Source="Images/Media-Controls-Rewind-icon.png"></Image>
+        </Button>
+        <Button Name="PlayButton" Height="30" Width="30" BorderBrush="Transparent" Background="White" Opacity="0.9" Grid.Column="1" Click="PlayPauseClicked">
+            <Image Source="Images/Media-Controls-End-icon.png"></Image>
+        </Button>
+        <Button Name="NextButton" Height="30" Width="30" BorderBrush="Transparent" Background="White" Opacity="0.9" Grid.Column="2" Click="NextClicked">
+            <Image Source="Images/Media-Controls-Fast-Forward-icon.png"></Image>
+        </Button>
+        <ProgressBar x:Name="ProgressBar"
+                     Grid.Row="1"
+                     BorderBrush="Transparent"
+                     Background="Transparent"
+                     Foreground="#FFFE97CC"
+                     Grid.ColumnSpan="3"
+                      />
+        <Border Opacity="0.8" Background="Black" Grid.ColumnSpan="3" Grid.Row="2">
+            <StackPanel>
+                <Label Foreground="White" Name="TrackTitle" />
+                <Label Foreground="White" Name="TrackArtist" />
+            </StackPanel>
+        </Border>
+        <Button Name="ToggleButton" Grid.Row="2" Grid.Column="2" Click="ToggleClick" Height="20" Width="30" BorderBrush="Transparent" Background="White" Opacity="0.9" >
+            <Image Source="Images/Media-Controls-Music-Video-icon.png"></Image>
+        </Button>
+        <WebBrowser Visibility="Collapsed" x:Name="WebBrowser" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+    </Grid>
+</Window>
